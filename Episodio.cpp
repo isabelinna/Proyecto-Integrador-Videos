@@ -15,27 +15,10 @@ int Episodio::getTemporada() { return temporada; }
 int Episodio::getDuracion() { return duracion; }
 int Episodio::getCalificacion() { return calificacion; }
 
-//void Episodio::setCalificacion(int c); {calificacion = c;}
-
-// //void Episodio::mostrarEpisodios()
-// {
-//     // return "Nobre del capitulo: " + titulo + ", temporada: " + temporada + "Duración: " + duracion + "Estrellas: " + calificacion + ;
-//     return 0;
-// }
-
-//void operator +(Episodio &d1,Episodio &d2);
-//return Episodio(duracion + duracion);
-
 int Episodio::operator+(Episodio &otro_ep)
 {
     return duracion + otro_ep.duracion;
 }
-
-// //void Episodio::mostrarEpisodios()
-// {
-//     // return "Nobre del capitulo: " + titulo + ", temporada: " + temporada + "Duración: " + duracion + "Estrellas: " + calificacion + ;
-//     return 0;
-// }
 
 ostream &operator<<(ostream &os, Episodio &ep)
 {

@@ -36,3 +36,9 @@ void Video::mostrarCalis()
 }
 
 string Video::mostrarGenero() { return "-El genero es-"; }
+
+ostream &operator<<(ostream &os, Video &vid)
+{
+    os << vid.getNombre();
+    return os;
+}

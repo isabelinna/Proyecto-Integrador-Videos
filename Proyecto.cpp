@@ -104,7 +104,7 @@ int main()
                 {
                     if (pelicula.getGenero().compare(genres[a - 1]) == 0)
                     {
-                        std::cout << pelicula.getNombre() << std::endl;
+                        std::cout << pelicula << std::endl;
                     }
                 }
 
@@ -112,7 +112,7 @@ int main()
                 {
                     if (serie.getGenero().compare(genres[a - 1]) == 0)
                     {
-                        std::cout << serie.getNombre() << std::endl;
+                        std::cout << serie << std::endl;
                     }
                 }
             }
@@ -135,7 +135,7 @@ int main()
                 {
                     if (pelicula.getCalificacion() == b)
                     {
-                        std::cout << pelicula.getNombre() << std::endl;
+                        std::cout << pelicula << std::endl;
                     }
                 }
 
@@ -144,11 +144,11 @@ int main()
 
                     if (serie.getCalificacion() == b)
                     {
-                        std::cout << serie.getNombre() << std::endl;
+                        std::cout << serie << std::endl;
                     }
                 }
             }
-            else if(b==1)
+            else if (b == 1)
             {
                 cout << "No tenemos videos tan malos" << endl;
             }
