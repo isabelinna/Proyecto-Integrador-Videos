@@ -39,6 +39,6 @@ string Video::mostrarGenero() { return "-El genero es-"; }
 
 ostream &operator<<(ostream &os, Video &vid)
 {
-    os << vid.getNombre();
+    os << vid.getNombre() << ", Estrellas: "<< vid.getCalificacion();
     return os;
 }

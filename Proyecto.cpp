@@ -52,6 +52,7 @@ int main()
     int opcion;
     int a;
     int b;
+    int c;
 
     // Episodio epi; // va a trona
 
@@ -160,12 +161,23 @@ int main()
         }
         case 3:
         {
-            //cout << << "\n";
+            cout <<"Nuestro Catálogo de Peliculas: \n";
+                for (auto pelis : misPeliculas)
+                cout << pelis << endl;
+
             break;
         }
         case 4:
         {
             cout << "Cuál serie quiere ver?\n";
+                for (auto seri : misSeries)
+                cout << seri << endl;
+            cin >> c;
+            if(c==1)
+            {
+                for (auto ep : witcher_episodes)
+                cout << ep << endl;
+            }
 
             break;
         }
