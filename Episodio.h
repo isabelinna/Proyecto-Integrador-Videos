@@ -20,6 +20,7 @@ public:
     int getCalificacion();
     int getDuracion();
     void mostrarEpisodios();
+    void setCalificacion(int c);
     int operator+(Episodio &otro_ep);
 };
 

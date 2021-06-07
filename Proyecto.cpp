@@ -53,6 +53,9 @@ int main()
     int a;
     int b;
     int c;
+    int d;
+    int e;
+    int f;
 
     // Episodio epi; // va a trona
 
@@ -161,22 +164,41 @@ int main()
         }
         case 3:
         {
-            cout <<"Nuestro Catálogo de Peliculas: \n";
-                for (auto pelis : misPeliculas)
-                cout << pelis << endl;
+            cout << "Nuestro Catálogo de Peliculas: \n";
+            for (auto pelis : misPeliculas)
+                cout << pelis.getId() << " - " << pelis << endl;
 
+            cout << "Quieres cambiar la calificación?";
+            cout << "1.Sí  2.No";
+            cin >> d;
+            if (d == 1)
+            {
+                cout << "Escribe el id de la película: ";
+                cin >> e;
+                cout << "Escribe la nueva calificación: ";
+                cin >> f;
+                for (auto pelis : misPeliculas)
+                {
+                    if (e == pelis.getId())
+                    {
+                        pelis.setCalificacion(f);
+                        cout << "Se cambió la calificación a: \n";
+                        cout << pelis.getNombre() << ":" << pelis.getCalificacion() << endl;
+                    }
+                }
+            }
             break;
         }
         case 4:
         {
             cout << "Cuál serie quiere ver?\n";
-                for (auto seri : misSeries)
-                cout << seri << endl;
+            for (auto serie : misSeries) // qué es seri ?
+                cout << serie << endl;
             cin >> c;
-            if(c==1)
+            if (c == 1)
             {
                 for (auto ep : witcher_episodes)
-                cout << ep << endl;
+                    cout << ep << endl;
             }
 
             break;
