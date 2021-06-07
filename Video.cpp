@@ -13,7 +13,7 @@ Video::Video(int _id, string _nombre, float _duracion, string _genero, int _cali
 
 Video::Video() {}
 
-int Video::get_id() { return id; }
+int Video::getId() { return id; }
 string Video::getNombre() { return nombre; }
 float Video::get_duracion() { return duracion; }
 string Video::getGenero() { return genero; }
@@ -27,7 +27,10 @@ void Video::mostrarVideo()
     cout << "Calificacion: " << calificacion << endl;
 }
 
-//void Video::setCalificacion(int c); {calificacion = c;}
+void Video::setCalificacion(int c)
+{
+    calificacion = c;
+}
 
 //creo que estas puede ser abstractas v
 void Video::mostrarCalis()
@@ -39,6 +42,6 @@ string Video::mostrarGenero() { return "-El genero es-"; }
 
 ostream &operator<<(ostream &os, Video &vid)
 {
-    os << vid.getNombre() << ", Estrellas: "<< vid.getCalificacion();
+    os << vid.getNombre() << ", Estrellas: " << vid.getCalificacion();
     return os;
 }

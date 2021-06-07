@@ -16,7 +16,7 @@ public:
 public:
     Video();
     Video(int, string, float, string, int);
-    int get_id();
+    int getId();
     string getNombre();
     float get_duracion();
     string getGenero();
@@ -24,7 +24,7 @@ public:
     void mostrarVideo();
     virtual void mostrarCalis();
     virtual string mostrarGenero();
-    //void set_calificacion(int c);
+    void setCalificacion(int c);
 };
 
 ostream &operator<<(ostream &os, Video &vid);

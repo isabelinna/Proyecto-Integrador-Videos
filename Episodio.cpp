@@ -15,6 +15,11 @@ int Episodio::getTemporada() { return temporada; }
 int Episodio::getDuracion() { return duracion; }
 int Episodio::getCalificacion() { return calificacion; }
 
+void Episodio::setCalificacion(int c)
+{
+    calificacion = c;
+}
+
 int Episodio::operator+(Episodio &otro_ep)
 {
     return duracion + otro_ep.duracion;
