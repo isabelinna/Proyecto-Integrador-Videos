@@ -1,3 +1,5 @@
+//Isabel Vieyra Enríquez(Clase completa)
+
 #ifndef PELICULA_H
 #define PELICULA_H
 #include "Video.h"
@@ -5,10 +7,12 @@
 #include <string>
 using namespace std;
 
-class Pelicula: public Video{
+class Pelicula : public Video
+{
 private:
     string director;
     int estreno;
+
 public:
     Pelicula(int, string, float, string, int, string, int);
     string getDirector();
@@ -16,7 +20,7 @@ public:
     string getGenero();
     void mostrarPelicula();
     virtual void mostrarCalis();
-    virtual string mostrarGenero();
-}; 
+    virtual void mostrarGenero();
+};
 
 #endif

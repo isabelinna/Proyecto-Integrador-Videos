@@ -1,6 +1,11 @@
-//Isabel Vieyra Enriquez A01745860
+
+//Isabel Vieyra Enríquez(Clase completa a excepción del constructor)
+////David Antonio González Muñoz(constructor)
+
 
 #include "Video.h"
+
+using namespace std;
 
 Video::Video(int _id, string _nombre, float _duracion, string _genero, int _calificacion)
 {
@@ -15,7 +20,7 @@ Video::Video() {}
 
 int Video::getId() { return id; }
 string Video::getNombre() { return nombre; }
-float Video::get_duracion() { return duracion; }
+float Video::getDuracion() { return duracion; }
 string Video::getGenero() { return genero; }
 int Video::getCalificacion() { return calificacion; }
 void Video::mostrarVideo()
@@ -32,16 +37,8 @@ void Video::setCalificacion(int c)
     calificacion = c;
 }
 
-//creo que estas puede ser abstractas v
-void Video::mostrarCalis()
-{
-    cout << "La calificacion es" << endl;
-}
-
-string Video::mostrarGenero() { return "-El genero es-"; }
-
 ostream &operator<<(ostream &os, Video &vid)
 {
-    os << vid.getNombre() << ", Estrellas: " << vid.getCalificacion();
+    os << vid.getId() << ".- " << vid.getNombre() << ", Estrellas: " << vid.getCalificacion();
     return os;
 }

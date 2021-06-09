@@ -1,3 +1,5 @@
+//Isabel Vieyra Enríquez(Clase completa)
+
 #ifndef SERIE_H
 #define SERIE_H
 #include <iostream>
@@ -5,11 +7,13 @@
 #include "Video.h"
 using namespace std;
 
-class Serie : public Video{
+class Serie : public Video
+{
 private:
     string productor;
     string emision;
     int num;
+
 public:
     Serie(int, string, float, string, int, string, string, int);
     string getProductor();
@@ -17,7 +21,7 @@ public:
     int getNum();
     void mostrarSerie();
     virtual void mostrarCalis();
-    virtual string mostrarGenero();
-}; 
+    virtual void mostrarGenero();
+};
 
-#endif 
+#endif
