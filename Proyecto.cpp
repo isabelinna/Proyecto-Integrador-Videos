@@ -19,7 +19,7 @@ void aMostrarCalis(Video &video) // polimorfismo
     video.mostrarCalis();
 }
 
-// sobreescritura:
+// sobrecarga:
 void aMostrarGenero(Pelicula &pelicula)
 {
     pelicula.mostrarGenero();
@@ -33,13 +33,11 @@ void aMostrarGenero(Serie &serie)
 int main()
 {
 
-#if defined(WIN_32)
-    // Set console code page to UTF-8 so console known how to interpret string data
+#if defined(WIN_32) //Arreglar acentos en windows
     SetConsoleOutputCP(CP_UTF8);
-    // Enable buffering to prevent VS from chopping up UTF-8 byte sequences
     setvbuf(stdout, nullptr, _IOFBF, 1000);
 #endif
-
+    //Vectores de Peliculas, series y episodios
     vector<Pelicula> misPeliculas;
     misPeliculas.push_back(Pelicula(1, "Siempre a tu lado", 93.3, "Drama", 3, "Lasse Hallstrom", 2009));
     misPeliculas.push_back(Pelicula(2, "Donnie Darko", 108.4, "Misterio", 4, "Richard Kelly", 2000));
@@ -94,7 +92,7 @@ int main()
     int m;
     int n;
     int o;
-
+    //Menú de opciones de la plataforma
     while (opcion != 5)
     {
         cout << endl;
@@ -121,14 +119,14 @@ int main()
             cin >> a;
 
             if (a > 0 && a < 4)
-            {
+            {   //Vector para utilizar el input del usuario como posición de un género
                 vector<string> genres = {"Drama", "Misterio", "Accion"};
 
                 for (auto pelicula : misPeliculas)
                 {
                     if (pelicula.getGenero().compare(genres[a - 1]) == 0)
                     {
-                        aMostrarGenero(pelicula);
+                        aMostrarGenero(pelicula); //Función abstracta utilizada por película
                     }
                 }
 
@@ -136,7 +134,7 @@ int main()
                 {
                     if (serie.getGenero().compare(genres[a - 1]) == 0)
                     {
-                        aMostrarGenero(serie);
+                        aMostrarGenero(serie); //Función abstracta utilizada por serie
                     }
                 }
             }
@@ -186,7 +184,7 @@ int main()
             cout << "Nuestro Catálogo de Peliculas: " << endl;
             for (auto pelis : misPeliculas)
             {
-                cout << pelis.getId() << " - " << pelis << endl;
+                cout << pelis.getId() << " - " << pelis << endl; 
             }
 
             cout << "Quieres cambiar la calificación?";
@@ -200,7 +198,7 @@ int main()
                 cin >> f;
                 for (auto pelis : misPeliculas)
                 {
-                    if (e == pelis.getId())
+                    if (e == pelis.getId()) //Se utiliza el id para seleccionar la película
                     {
                         pelis.setCalificacion(f);
                         cout << "Se cambió la calificación a: " << endl;
@@ -213,9 +211,9 @@ int main()
         case 4:
         {
             cout << "Cuál serie quiere ver?" << endl;
-            for (auto serie : misSeries)
+            for (auto serie : misSeries) 
             {
-                cout << serie << endl;
+                cout << serie << endl; //Uso de sobrecarga del operador "<<"
             }
             cin >> c;
             cout << "Episodios de la primera temporada: " << endl;

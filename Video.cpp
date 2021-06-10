@@ -37,7 +37,7 @@ void Video::setCalificacion(int c)
     calificacion = c;
 }
 
-ostream &operator<<(ostream &os, Video &vid)
+ostream &operator<<(ostream &os, Video &vid) //Sobre carga de "<<"
 {
     os << vid.getId() << ".- " << vid.getNombre() << ", Estrellas: " << vid.getCalificacion();
     return os;
